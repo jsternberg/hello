@@ -7,5 +7,5 @@ WORKDIR /var/lib/hello
 USER hello
 RUN bundle install --deployment --without development,test
 EXPOSE 5000
-ENTRYPOINT ["bundle","exec","foreman","start","-p","5000"]
-CMD ["web"]
+ENTRYPOINT ["bundle","exec","ruby","app.rb","-p","5000","-e","production"]
+CMD []
